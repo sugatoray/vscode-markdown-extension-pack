@@ -2,6 +2,7 @@
 # - https://code.visualstudio.com/api/working-with-extensions/continuous-integration#github-actions
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master

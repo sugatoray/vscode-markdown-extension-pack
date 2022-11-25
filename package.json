@@ -33,11 +33,13 @@
     "extensionPack": [
         "yzhang.markdown-all-in-one",
         "yzane.markdown-pdf",
+        "DavidAnson.vscode-markdownlint",
         "bierner.markdown-preview-github-styles",
         "bierner.markdown-mermaid",
         "bierner.markdown-emoji",
         "bierner.markdown-checkbox",
         "bierner.markdown-footnotes",
+        "bierner.markdown-yaml-preamble",
         "ms-vscode.Theme-MarkdownKit"
     ],
     "scripts": {

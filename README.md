@@ -8,6 +8,8 @@ This extension pack packages some of the most popular (and some of my favorite) 
 
 * [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) - This extension converts Markdown files to pdf, html, png or jpeg files.
 
+* [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) - Markdown linting and style checking for Visual Studio Code.
+
 * [Markdown Preview Github Styling](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles) - Changes VS Code's built-in markdown preview to match Github's style.
 
 * [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) - Adds Mermaid diagram and flowchart support to VS Code's builtin markdown preview.
@@ -19,6 +21,8 @@ This extension pack packages some of the most popular (and some of my favorite) 
 * [Markdown Checkboxes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-checkbox) - Adds checkbox support to the built-in markdown preview.
 
 * [Markdown Footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes) - Adds [^footnote] syntax support to VS Code's built-in markdown preview.
+
+* [Markdown yaml Preamble](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-yaml-preamble) - Renders yaml front matter as a table in the built-in markdown preview.
 
 * [Markdown Theme Kit](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Theme-MarkdownKit) - A set of themes based on [SublimeText-Markdown/MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing).
 

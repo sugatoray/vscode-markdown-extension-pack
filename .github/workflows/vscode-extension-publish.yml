@@ -45,10 +45,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: npm install
-      - uses: lannonbr/vsce-action@3.0.0
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v1
         with:
-          args: "publish -p $VSCE_PAT"
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          node-version: 10.x
+      - uses: actions/checkout@v2
+      - name: Install npm
+        run: npm install
+      # - uses: lannonbr/vsce-action@3.0.0
+      - name: Install VSCE
+        run: npm install -g vsce
+      - name: Publish Extension
+        # env:
+        #   VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: vsce publish -p ${{ secrets.VSCE_PAT }}

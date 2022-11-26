@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6
+
+- Added [**Markdown Navigation**](https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-navigation) extension to the extension-pack.
+
 ## 0.0.5
 
 - Minor updates to `package.json` and `README.md`. Fixing typos and emojis.

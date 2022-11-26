@@ -28,6 +28,8 @@ This extension pack packages some of the most popular (and some of my favorite) 
 
 * 🎁 [Markdown Theme Kit](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Theme-MarkdownKit) - A set of themes based on [SublimeText-Markdown/MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing).
 
+* 🎁 [Markdown Navigation](https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-navigation) - Auto generate markdown navigation panel to the activity bar.
+
 ## Want to see your extension added?
 
 Open a PR and I'd be happy to take a look.

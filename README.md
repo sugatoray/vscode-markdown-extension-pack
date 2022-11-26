@@ -1,4 +1,4 @@
-[![](https://vsmarketplacebadge.apphb.com/version/sugatoray.markdown-extension-pack.svg)](https://marketplace.visualstudio.com/items?itemName=sugatoray.markdown-extension-pack)
+[![vscode-badge](https://vsmarketplacebadge.apphb.com/version/sugatoray.vscode-markdown-extension-pack.svg)](https://marketplace.visualstudio.com/items?itemName=sugatoray.vscode-markdown-extension-pack)
 
 # VS Code Markdown Extension Pack
 

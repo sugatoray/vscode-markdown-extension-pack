@@ -1,8 +1,8 @@
 {
-    "name": "markdown-extension-pack",
+    "name": "vscode-markdown-extension-pack",
     "displayName": "Markdown Extension Pack",
     "description": "Popular Visual Studio Code extensions for Markdown",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "sugatoray",
     "author": {
         "name": "Sugato Ray",
@@ -25,7 +25,13 @@
         "vscode": "^1.60.0"
     },
     "keywords": [
-        "markdown"
+        "markdown",
+        "extension-pack",
+        "pdf",
+        "emoji",
+        "footnotes",
+        "mermaid",
+        "markdownlint"
     ],
     "categories": [
         "Extension Packs"

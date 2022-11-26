@@ -1,3 +1,5 @@
+[![](https://vsmarketplacebadge.apphb.com/version/sugatoray.markdown-extension-pack.svg)](https://marketplace.visualstudio.com/items?itemName=sugatoray.markdown-extension-pack)
+
 # VS Code Markdown Extension Pack
 
 This extension pack packages some of the most popular (and some of my favorite) Markdown extensions.
@@ -18,11 +20,11 @@ This extension pack packages some of the most popular (and some of my favorite) 
 
 [#emoji-link]: https://www.webpagefx.com/tools/emoji-cheat-sheet/
 
-* [Markdown Checkboxes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-checkbox) - Adds checkbox support to the built-in markdown preview.
+* [Markdown Checkboxes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-checkbox) - Adds `- [ ]tasklist` checkbox support to the built-in markdown preview.
 
 * [Markdown Footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes) - Adds [^footnote] syntax support to VS Code's built-in markdown preview.
 
-* [Markdown yaml Preamble](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-yaml-preamble) - Renders yaml front matter as a table in the built-in markdown preview.
+* [Markdown yaml Preamble](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-yaml-preamble) - Renders yaml front matter as a table in the built-in markdown preview. Make sure to set `"markdown.previewFrontMatter": "show"` in VS Code `settings.json`.
 
 * [Markdown Theme Kit](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Theme-MarkdownKit) - A set of themes based on [SublimeText-Markdown/MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing).
 

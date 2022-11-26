@@ -7,7 +7,7 @@
     //"workbench.colorTheme": "Monokai",
     "workbench.settings.editor": "json",
     "workbench.settings.openDefaultSettings": true,
-    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    //"editor.fontFamily": "Consolas, 'Courier New', monospace",
     //"terminal.integrated.fontFamily": "monospace" , //"DejaVu Sans Mono for Powerline",
     // Markdown Lint Settings
     "markdownlint.config": {
@@ -55,7 +55,7 @@
           ! - [1] "Menlo for Powerline"
           ! - [2] "DejaVu Sans Mono for Powerline"
     */
-    "terminal.integrated.fontFamily": "Menlo for Powerline",
+    //"terminal.integrated.fontFamily": "Menlo for Powerline",
     "colorInfo.fields": [
         "hex",
         "rgb",

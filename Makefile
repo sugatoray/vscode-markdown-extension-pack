@@ -5,13 +5,17 @@
 
 .PHONY: build publish
 
+move:
+	@echo "\n Moving .vsix files to .artifacts folder"
+	mv *.vsix ./.arifacts/
+
 build:
-		@echo "\n🔥⚙️ Packaging... ⏳\n"
-		vsce package
+	@echo "\n🔥⚙️ Packaging... ⏳\n"
+	vsce package
 
 publish:
-		@echo "\n📘📄 Publishing... ⏳\n"
-		vsce publish
+	@echo "\n📘📄 Publishing... ⏳\n"
+	vsce publish
 
 release: build publish
-		@echo "\n✨ Releasing... ⏳\n"
+	@echo "\n✨ Releasing... ⏳\n"

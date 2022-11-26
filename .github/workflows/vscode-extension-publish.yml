@@ -45,13 +45,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Install Node.js
-        uses: actions/setup-node@v1
+      - name: Install Node.js + npm
+        uses: actions/setup-node@v3
         with:
-          node-version: 10.x
-      - uses: actions/checkout@v2
+          node-version: 16
       - name: Install npm
         run: npm install
       # - uses: lannonbr/vsce-action@3.0.0

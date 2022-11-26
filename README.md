@@ -16,11 +16,11 @@ This extension pack packages some of the most popular (and some of my favorite) 
 
 * 🎁 [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) - Adds Mermaid diagram and flowchart support to VS Code's builtin markdown preview.
 
-* 🎁 [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji) - Adds [`:emoji:`][#emoji-link] syntax support to VS Code's built-in Markdown preview and to ,markdown cells in notebooks.
+* 🎁 [Markdown Emoji](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-emoji) - Adds [`:emoji:`][#emoji-link] syntax support to VS Code's built-in Markdown preview and markdown cells in notebooks.
 
 [#emoji-link]: https://www.webpagefx.com/tools/emoji-cheat-sheet/
 
-* 🎁 [Markdown Checkboxes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-checkbox) - Adds `- [ ]tasklist` checkbox support to the built-in markdown preview.
+* 🎁 [Markdown Checkboxes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-checkbox) - Adds `- [x] tasklist` checkbox support to the built-in markdown preview.
 
 * 🎁 [Markdown Footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes) - Adds [^footnote] syntax support to VS Code's built-in markdown preview.
 
@@ -32,4 +32,14 @@ This extension pack packages some of the most popular (and some of my favorite) 
 
 Open a PR and I'd be happy to take a look.
 
-**Enjoy!** 🎁 :sparkles: :tada:
+**Enjoy!** 🎁 ✨ 🎉
+
+<!---
+
+## List of Emojis Used
+
+- 🎁 : `:gift:`
+- ✨ : `:sparkles:`
+- 🎉 : `:tada:`
+
+--->

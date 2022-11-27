@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.7
+
+- Updated `README.md` for ease of tracking the number of included extensions.
+
 ## 0.0.6
 
 - Added [**Markdown Navigation**](https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-navigation) extension to the extension-pack.

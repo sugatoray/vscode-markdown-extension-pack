@@ -4,6 +4,7 @@
 Makefile
 .gitignore
 *.vsix
+.DS_Store
 
 **/*.ts
 **/tsconfig.json

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.9
+
+- Updated `README.md` for extension badge.
+
+## 0.0.8
+
+- Updated `README.md` for better readability of the included extensions.
+
 ## 0.0.7
 
 - Updated `README.md` for ease of tracking the number of included extensions.

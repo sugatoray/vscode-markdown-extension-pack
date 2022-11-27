@@ -1,4 +1,10 @@
-[![vscode-badge](https://vsmarketplacebadge.apphb.com/version/sugatoray.vscode-markdown-extension-pack.svg)](https://marketplace.visualstudio.com/items?itemName=sugatoray.vscode-markdown-extension-pack)
+
+<!-- markdownlint-disable MD041 -->
+[![vscode-badge][#vsce-svg-url]][#vsce-marketplace-url]
+
+[#vsce-svg-url]: https://vsmarketplacebadge.apphb.com/version/sugatoray.vscode-markdown-extension-pack.svg
+[#vsce-marketplace-url]: https://marketplace.visualstudio.com/items?itemName=sugatoray.vscode-markdown-extension-pack
+<!-- markdownlint-enable MD041 -->
 
 # VS Code Markdown Extension Pack
 

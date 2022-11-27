@@ -2,6 +2,9 @@
 #  - https://code.visualstudio.com/api/working-with-extensions/publishing-extension
 #  - https://github.com/microsoft/vscode-vsce/issues/11
 #  - https://dev.azure.com/sugatoray/_usersSettings/tokens
+#  
+# manage vscode extensions: 
+#  - https://marketplace.visualstudio.com/manage/publishers/sugatoray
 
 .PHONY: help move build publish release
 

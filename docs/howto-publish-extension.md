@@ -1,0 +1,47 @@
+# How To Publish a VS Code Extension
+
+1. Setup a Personal Access Token (PAT).
+
+   - Create a publisher if you don't have one already.
+   - Create a PAT:
+     - label: `VSCE_PAT`
+     - org: `all available`
+     - expiry: `90 days`
+   - Note down the PAT for later use.
+
+2. Install `vsce` on you machine.
+
+   - MacOS: `brew install node`
+   - AnyOS: `npm install -g vsce`
+
+3. Check the validity of the PAT on your machine.
+   
+   - Store the PAT as:
+     
+     ```sh
+     export VSCE_PAT=<your-pat-here>
+     ```
+
+   - Check the PAT:
+     
+     ```sh 
+     vsce verify-pat -p $VSCE_PAT
+     ```
+
+     This should show:
+     > *The Personal Access Token verification succeeded for the publisher 'sugatoray'.*
+
+4. Setup VSCE publisher login.
+
+   ```sh
+   export VSCE_PUBLISHER=sugatoray
+   vsce login $VSCE_PUBLISHER  
+   ```
+
+   Provide the VSCE_PAT you copied earlier.
+
+5. Publish the extension via VSCE.
+
+   ```sh
+   vsce publish -p $VSCE_PAT
+   ```

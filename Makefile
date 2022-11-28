@@ -6,45 +6,61 @@
 # manage vscode extensions: 
 #  - https://marketplace.visualstudio.com/manage/publishers/sugatoray
 
-.PHONY: help move build publish release 
-
+.PHONY: help
+.PHONY:	vsix.move vsix.clear
+.PHONY: pkg.build pkg.publish pkg.release 
 .PHONY: vsce.open vsce.token vsce.metadata
+
+########################## Extesion Specific Parameters #############################
 
 VSCE_PUBLISHER := sugatoray
 VSCE_NAME := vscode-markdown-extension-pack
+PYTHON := python3
+
+########################## DONOT CHANGE PARAMETERS BELOW ###############################
+
 VSCE_EXTENSION_URL := https://marketplace.visualstudio.com/items?itemName=$(VSCE_PUBLISHER).$(VSCE_NAME)
 VSCE_MANAGEMENT_URL := https://marketplace.visualstudio.com/manage/publishers/$(VSCE_PUBLISHER)
 VSCE_TOKEN_URL := https://dev.azure.com/$(VSCE_PUBLISHER)/_usersSettings/tokens
-PYTHON := python3
+
+####################### PARAMETERS ###########################
 
 help:
 	@echo "\n Makefile Commands' Help\n"
 	# Commands:
 	#
-	# move			    :	Move the .vsix artifact(s) under .artifacts folder.
-	# build			    :	Build the extension (creates a.vsix file).
-	# publish		    :	Publish the extension.
-	# release 		    :	Build and Publish the extension.
-	# vsce.open		    :	Opens the VS Code Extension Management page for a Publisher.
-	# vsce.token		:	Opens the Azure DevOps Page to Manage the Personal Access Token for VSCE.
+	# vsix.move         :	Move the .vsix artifact(s) under .artifacts folder.
+	# vsix.clear        :	Clear the .vsix files from .artifacts folder.
+	#
+	# pkg.build         :	Build the extension (creates a.vsix file).
+	# pkg.publish       :	Publish the extension.
+	# pkg.release       :	Build and Publish the extension.
+	#
+	# vsce.open         :	Opens the VS Code Extension Management page for a Publisher.
+	# vsce.token        :	Opens the Azure DevOps Page to Manage the Personal Access Token for VSCE.
 	# vsce.metadata     :	Fetches extension metadata
-	# vsce.extn			:	Opens the Marketplace Extension Page in Browser
+	# vsce.extn         :	Opens the Marketplace Extension Page in Browser
+	# 
 
 ############################## ..: COMMANDS s:.. ################################
 
-move:
+vsix.move:
 	@echo "\n Moving .vsix files to .artifacts folder... ⏳\n"
 	mv *.vsix ./.artifacts/
 
-build:
+vsix.clear:
+	@echo "\n Moving .vsix files to .artifacts folder... ⏳\n"
+	rm ./.artifacts/*.vsix
+
+pkg.build:
 	@echo "\n🔥⚙️ Packaging... ⏳\n"
 	vsce package
 
-publish:
+pkg.publish:
 	@echo "\n📘📄 Publishing... ⏳\n"
 	vsce publish
 
-release: build move publish
+pkg.release: pkg.build vsix.move pkg.publish vsix.clear
 	@echo "\n✨ Releasing... ⏳\n"
 
 vsce.open:

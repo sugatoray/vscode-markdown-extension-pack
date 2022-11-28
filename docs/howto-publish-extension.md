@@ -3,16 +3,29 @@
 1. Setup a Personal Access Token (PAT).
 
    - Create a publisher if you don't have one already.
+
+     Open the extension manager with: 
+
+     ```sh
+     make vsce.open
+     ```
+
    - Create a PAT:
      - label: `VSCE_PAT`
      - org: `all available`
      - expiry: `90 days`
    - Note down the PAT for later use.
 
+     Open the webpage for creating/managing Azure tokens with:
+
+     ```sh
+     make vsce.token
+     ``` 
+
 2. Install `vsce` on you machine.
 
-   - MacOS: `brew install node`
-   - AnyOS: `npm install -g vsce`
+   - Install `node` on MacOS: `brew install node`
+   - Install VSCE on any OS: `npm install -g vsce`
 
 3. Check the validity of the PAT on your machine.
    
@@ -44,4 +57,28 @@
 
    ```sh
    vsce publish -p $VSCE_PAT
+   ```
+
+   Or, use (with already stored PAT):
+
+   ```sh
+   make publish
+   ``` 
+
+6. Show extension metadata.
+
+   ```sh
+   vsce show sugatoray.vscode-markdown-extension-pack
+   ```
+
+   Or, use:
+
+   ```sh
+   make vsce.metadata
+   ```
+
+7. Open Extension Page in Marketplace in the browser.
+
+   ```sh
+   make vsce.extn 
    ```

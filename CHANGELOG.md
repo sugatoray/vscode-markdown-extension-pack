@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0
+
+- Update extension version to ready-state: `v1.0.0`.
+
 ## 0.0.9
 
 - Updated `README.md` for extension badge.

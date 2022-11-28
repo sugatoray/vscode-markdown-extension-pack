@@ -62,7 +62,7 @@
    Or, use (with already stored PAT):
 
    ```sh
-   make publish
+   make pkg.publish
    ``` 
 
 6. Show extension metadata.

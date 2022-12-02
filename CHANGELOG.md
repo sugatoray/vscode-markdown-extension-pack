@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Update the `README.md` with installation information.
+
 ## 1.0.0
 
 - Update extension version to ready-state: `v1.0.0`.

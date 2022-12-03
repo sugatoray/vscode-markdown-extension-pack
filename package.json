@@ -2,7 +2,7 @@
     "name": "vscode-markdown-extension-pack",
     "displayName": "Markdown Extension Pack",
     "description": "Popular Visual Studio Code extensions for Markdown",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "publisher": "sugatoray",
     "author": {
         "name": "Sugato Ray",
@@ -47,7 +47,8 @@
         "bierner.markdown-footnotes",
         "bierner.markdown-yaml-preamble",
         "ms-vscode.Theme-MarkdownKit",
-        "AlanWalk.markdown-navigation"
+        "AlanWalk.markdown-navigation",
+        "tomoki1207.pdf"
     ],
     "pricing": "Free",
     "scripts": {

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+- Add [`vscode-pdf`](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) for displaying pdf file within VS Code.
+    
+  > **Why?** Markdown PDF extension helps generate PDF files from markdown documents. The PDF viewing ability will be a handy feature. 
+
 ## 1.0.1
 
 - Update the `README.md` with installation information.

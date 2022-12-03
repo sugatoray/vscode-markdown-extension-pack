@@ -25,6 +25,7 @@ This extension pack packages some of the most popular (and some of my favorite) 
 | `09` | 🎁 [Markdown yaml Preamble](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-yaml-preamble) <br/> <p><ul> Renders yaml front matter as a table in the built-in markdown preview. Make sure to set `"markdown.previewFrontMatter": "show"` in VS Code `settings.json`.</ul></p> |
 | `10` | 🎁 [Markdown Theme Kit](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Theme-MarkdownKit) <br/> <p><ul> A set of themes based on [SublimeText-Markdown/MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing). </ul></p> |
 | `11` | 🎁 [Markdown Navigation](https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-navigation) <br/> <p><ul> Auto generate markdown navigation panel to the activity bar. </ul></p> |
+| `12` | 🎁 [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) <br/> <p><ul> Display pdf file in VSCode. </ul></p> |
 
 ## Want to see your extension added?
 

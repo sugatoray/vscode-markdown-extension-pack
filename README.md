@@ -1,8 +1,12 @@
 
 <!-- markdownlint-disable MD041 -->
-[![vscode-badge][#vsce-svg-url]][#vsce-marketplace-url]
+[![vscode-badge][#vsce-svg-url-version]][#vsce-marketplace-url]
+[![Installs][#vsce-svg-url-installs]][#vsce-marketplace-url] 
+[![Downloads][#vsce-svg-url-downloads]][#vsce-marketplace-url]
 
-[#vsce-svg-url]: https://vsmarketplacebadge.apphb.com/version/sugatoray.vscode-markdown-extension-pack.svg
+[#vsce-svg-url-version]: https://vsmarketplacebadge.apphb.com/version/sugatoray.vscode-markdown-extension-pack.svg
+[#vsce-svg-url-installs]: https://vsmarketplacebadge.apphb.com/installs/sugatoray.vscode-markdown-extension-pack.svg
+[#vsce-svg-url-downloads]: https://vsmarketplacebadge.apphb.com/downloads/sugatoray.vscode-markdown-extension-pack.svg
 [#vsce-marketplace-url]: https://marketplace.visualstudio.com/items?itemName=sugatoray.vscode-markdown-extension-pack
 <!-- markdownlint-enable MD041 -->
 

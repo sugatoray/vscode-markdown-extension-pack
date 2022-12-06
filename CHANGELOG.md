@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- Update the `README.md` with additional installation and downloads information.
+
 ## 1.1.0
 
 - Add [`vscode-pdf`](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) for displaying pdf file within VS Code.

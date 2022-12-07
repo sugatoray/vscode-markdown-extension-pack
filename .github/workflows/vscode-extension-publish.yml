@@ -74,9 +74,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Using VSCE?
-        run: echo $USE_VSCE | "${{ env.USE_VSCE }}"
+        run: |
+          echo $USE_VSCE | [${{ env.USE_VSCE }}] \
+          | ${{ env.USE_VSCE == 'true' }} \
+          | ${{ env.USE_VSCE == true }}
       - name: Using OVSX?
-        run: echo $USE_OVSX | "${{ env.USE_OVSX }}"
+        run: echo $USE_OVSX | [${{ env.USE_OVSX }}]
       # - name: Check boolean for USE_VSCE
       #   if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
       #   run: echo USE_VSCE is ${{ env.USE_VSCE == 'true' }} | ${{ env.USE_VSCE }}

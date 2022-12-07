@@ -89,7 +89,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ env.PUBLISH_EXTENSION == 'true' }}
+    if: ${{ env.PUBLISH_EXTENSION }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2

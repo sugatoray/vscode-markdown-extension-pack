@@ -104,9 +104,29 @@ jobs:
     steps:
       - name: Using VSCE? [[ Test-E | valueIs('1') ]]
         run: |
-          echo "## ${{ steps.name }} 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "## ${{ jobs.checkE.steps[*].name }} 🚀" >> $GITHUB_STEP_SUMMARY
           echo "Try with: `${USE_VSCE}`" >> GITHUB_STEP_SUMMARY
-          echo "${USE_VSCE} | ${{ env.USE_VSCE == '1' }}" >> $GITHUB_STEP_SUMMARY
+          echo -e "\n```sh\n${USE_VSCE} | ${{ env.USE_VSCE == '1' }}\n```" >> $GITHUB_STEP_SUMMARY
+  checkF:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Python Shell
+        run: |
+          import os
+          from textwrap import dedent
+
+          source = "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-running-a-python-script"
+
+          mbody = f"""\n
+          ## MarkDown Header :sparkle:
+
+          See [here]({source}) and learn how to use a `python` shell in GitHub actions! :tada:
+
+          """
+          payload = dedent(mbody)
+          print(payload)
+          os.environ[GITHUB_STEP_SUMMARY] += payload
+        shell: python
 
       # - name: Check boolean for USE_VSCE
       #   if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}

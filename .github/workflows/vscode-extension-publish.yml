@@ -128,8 +128,8 @@ jobs:
           print(payload)
           os.environ["GITHUB_STEP_SUMMARY"] += payload
         shell: python
-        # env:
-        #   GITHUB_STEP_SUMMARY: ${{ env.GITHUB_STEP_SUMMARY }}
+        env:
+          GITHUB_STEP_SUMMARY: ${{ env.GITHUB_STEP_SUMMARY }}
 
       # - name: Check boolean for USE_VSCE
       #   if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}

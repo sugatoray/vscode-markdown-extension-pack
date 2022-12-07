@@ -4,6 +4,12 @@
 on:
   workflow_dispatch:
     inputs:
+      diagnose:
+        description: Diagnose Mode?
+        type: boolean
+        required: true
+        default: false
+
       publish:
         description: Publish Extension?
         type: boolean
@@ -12,12 +18,12 @@ on:
       use_vsce:
         description: Publish with VSCE?
         type: boolean
-        required: false
+        required: true
         default: true
       use_ovsx:
         description: Publish with OVSX?
         type: boolean
-        required: false
+        required: true
         default: true
   # push:
   #   branches:
@@ -30,6 +36,7 @@ env:
   USE_VSCE: ${{ github.event.inputs.use_vsce }}
   USE_OVSX: ${{ github.event.inputs.use_ovsx }}
   PUBLISH_EXTENSION: ${{ github.event.inputs.publish }}
+  USE_DIAGNOSE_MODE: ${{ github.event.inputs.diagnose }}
 
 # jobs:
 #   build:
@@ -72,12 +79,15 @@ jobs:
         run: echo $USE_OVSX
       - name: Check boolean for USE_VSCE
         # if: env.USE_VSCE == "true"
-        run: echo USE_VSCE is ${{ env.USE_VSCE == "true" }} | ${{ env.USE_VSCE }}
+        if: env.USE_DIAGNOSE_MODE == "true"
+        run: echo USE_VSCE is $USE_VSCE == "true" }} | ${{ env.USE_VSCE }}
       - name: Check boolean for USE_OVSX
         # if: env.USE_OVSX == "true"
+        if: env.USE_DIAGNOSE_MODE == "true"
         run: echo USE_OVSX is ${{ env.USE_OVSX == "true" }} | ${{ env.USE_OVSX }}
       - name: Check boolean for PUBLISH_EXTENSION
         # if: env.PUBLISH_EXTENSION == "true"
+        if: env.USE_DIAGNOSE_MODE == "true"
         run: echo PUBLISH_EXTENSION is ${{ env.PUBLISH_EXTENSION == "true" }} | ${{ env.PUBLISH_EXTENSION }}
 
   deploy:

@@ -80,15 +80,15 @@ jobs:
       - name: Check boolean for USE_VSCE
         # if: env.USE_VSCE == "true"
         if: env.USE_DIAGNOSE_MODE == "true"
-        run: echo USE_VSCE is $USE_VSCE == "true" }} | ${{ env.USE_VSCE }}
+        run: echo USE_VSCE is ${{ env.USE_VSCE == 'true' }} | ${{ env.USE_VSCE }}
       - name: Check boolean for USE_OVSX
         # if: env.USE_OVSX == "true"
         if: env.USE_DIAGNOSE_MODE == "true"
-        run: echo USE_OVSX is ${{ env.USE_OVSX == "true" }} | ${{ env.USE_OVSX }}
+        run: echo USE_OVSX is ${{ env.USE_OVSX == 'true' }} | ${{ env.USE_OVSX }}
       - name: Check boolean for PUBLISH_EXTENSION
         # if: env.PUBLISH_EXTENSION == "true"
         if: env.USE_DIAGNOSE_MODE == "true"
-        run: echo PUBLISH_EXTENSION is ${{ env.PUBLISH_EXTENSION == "true" }} | ${{ env.PUBLISH_EXTENSION }}
+        run: echo PUBLISH_EXTENSION is ${{ env.PUBLISH_EXTENSION == 'true' }} | ${{ env.PUBLISH_EXTENSION }}
 
   deploy:
     runs-on: ubuntu-latest

@@ -72,7 +72,7 @@ name: Publish VSCode Extension
 jobs:
   check:
     runs-on: ubuntu-latest
-    if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
+    # if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2

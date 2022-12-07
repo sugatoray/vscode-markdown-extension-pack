@@ -70,16 +70,33 @@ env:
 #       - master
 name: Publish VSCode Extension
 jobs:
-  check:
+  checkA:
     runs-on: ubuntu-latest
     steps:
       - name: Using VSCE?
         run: |
-          echo $USE_VSCE | [${{ env.USE_VSCE }}] \
-          | ${{ env.USE_VSCE == 'true' }} \
-          | ${{ env.USE_VSCE == true }}
+          echo $USE_VSCE | [${{ env.USE_VSCE }}]
       - name: Using OVSX?
         run: echo $USE_OVSX | [${{ env.USE_OVSX }}]
+  checkB:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using VSCE? [[ Test-B ]]
+        run: |
+          echo ${USE_VSCE} | ${{ env.USE_VSCE == 'true' }}
+  checkC:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using VSCE? [[ Test-C ]]
+        run: |
+          echo ${USE_VSCE} | ${{ env.USE_VSCE == true }}
+  checkD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using VSCE? [[ Test-D ]]
+        run: |
+          echo ${USE_VSCE} | ${{ env.USE_VSCE == 1 }}
+
       # - name: Check boolean for USE_VSCE
       #   if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
       #   run: echo USE_VSCE is ${{ env.USE_VSCE == 'true' }} | ${{ env.USE_VSCE }}

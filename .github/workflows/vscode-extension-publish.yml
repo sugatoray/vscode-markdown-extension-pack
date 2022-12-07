@@ -75,8 +75,8 @@ jobs:
     steps:
       - name: Using VSCE?
         run: |
-          echo "$USE_VSCE | value: __${{ env.USE_VSCE }}__"
-          echo "${USE_VSCE} | value: __${{ env.USE_VSCE }}__"
+          echo "$USE_VSCE | value: __${{ env.USE_VSCE }}__" >> $GITHUB_STEP_SUMMARY
+          echo "${USE_VSCE} | value: __${{ env.USE_VSCE }}__" >> $GITHUB_STEP_SUMMARY
       - name: Using OVSX?
         run: |
           echo "$USE_OVSX | value: __${{ env.USE_OVSX }}__"
@@ -86,25 +86,27 @@ jobs:
     steps:
       - name: Using VSCE? [[ Test-B | valueIs('true') ]]
         run: |
-          echo "${USE_VSCE} | ${{ env.USE_VSCE == 'true' }}"
+          echo "${USE_VSCE} | ${{ env.USE_VSCE == 'true' }}" >> $GITHUB_STEP_SUMMARY
   checkC:
     runs-on: ubuntu-latest
     steps:
       - name: Using VSCE? [[ Test-C | valueIs(true) ]]
         run: |
-          echo "${USE_VSCE} | ${{ env.USE_VSCE == true }}"
+          echo "${USE_VSCE} | ${{ env.USE_VSCE == true }}" >> $GITHUB_STEP_SUMMARY
   checkD:
     runs-on: ubuntu-latest
     steps:
       - name: Using VSCE? [[ Test-D | valueIs(1) ]]
         run: |
-          echo "${USE_VSCE} | ${{ env.USE_VSCE == 1 }}"
+          echo "${USE_VSCE} | ${{ env.USE_VSCE == 1 }}" >> $GITHUB_STEP_SUMMARY
   checkE:
     runs-on: ubuntu-latest
     steps:
       - name: Using VSCE? [[ Test-E | valueIs('1') ]]
         run: |
-          echo "${USE_VSCE} | ${{ env.USE_VSCE == '1' }}"
+          echo "## ${{ steps.name }} 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "Try with: `${USE_VSCE}`" >> GITHUB_STEP_SUMMARY
+          echo "${USE_VSCE} | ${{ env.USE_VSCE == '1' }}" >> $GITHUB_STEP_SUMMARY
 
       # - name: Check boolean for USE_VSCE
       #   if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}

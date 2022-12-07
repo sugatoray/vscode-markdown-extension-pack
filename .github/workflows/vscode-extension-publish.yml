@@ -75,27 +75,34 @@ jobs:
     steps:
       - name: Using VSCE?
         run: |
-          echo $USE_VSCE | [${{ env.USE_VSCE }}]
+          echo $USE_VSCE | value: __${{ env.USE_VSCE }}__
       - name: Using OVSX?
-        run: echo $USE_OVSX | [${{ env.USE_OVSX }}]
+        run: |
+          echo $USE_OVSX | value: __${{ env.USE_OVSX }}__
   checkB:
     runs-on: ubuntu-latest
     steps:
-      - name: Using VSCE? [[ Test-B ]]
+      - name: Using VSCE? [[ Test-B | valueIs('true') ]]
         run: |
           echo ${USE_VSCE} | ${{ env.USE_VSCE == 'true' }}
   checkC:
     runs-on: ubuntu-latest
     steps:
-      - name: Using VSCE? [[ Test-C ]]
+      - name: Using VSCE? [[ Test-C | valueIs(true) ]]
         run: |
           echo ${USE_VSCE} | ${{ env.USE_VSCE == true }}
   checkD:
     runs-on: ubuntu-latest
     steps:
-      - name: Using VSCE? [[ Test-D ]]
+      - name: Using VSCE? [[ Test-D | valueIs(1) ]]
         run: |
           echo ${USE_VSCE} | ${{ env.USE_VSCE == 1 }}
+  checkE:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using VSCE? [[ Test-E | valueIs('1') ]]
+        run: |
+          echo ${USE_VSCE} | ${{ env.USE_VSCE == '1' }}
 
       # - name: Check boolean for USE_VSCE
       #   if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}

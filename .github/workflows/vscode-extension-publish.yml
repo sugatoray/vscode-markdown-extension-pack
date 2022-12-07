@@ -75,10 +75,14 @@ jobs:
     steps:
       - name: Using VSCE?
         run: |
-          echo $USE_VSCE | value: __${{ env.USE_VSCE }}__
+          echo "$USE_VSCE | value: __${{ env.USE_VSCE }}__"
+        run: |
+          echo "${USE_VSCE} | value: __${{ env.USE_VSCE }}__"
       - name: Using OVSX?
         run: |
-          echo $USE_OVSX | value: __${{ env.USE_OVSX }}__
+          echo "$USE_OVSX | value: __${{ env.USE_OVSX }}__"
+        run: |
+          echo "${USE_OVSX} | value: __${{ env.USE_OVSX }}__"
   checkB:
     runs-on: ubuntu-latest
     steps:

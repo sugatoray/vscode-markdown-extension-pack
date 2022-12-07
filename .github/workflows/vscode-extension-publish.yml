@@ -77,40 +77,40 @@ jobs:
         run: echo $USE_VSCE
       - name: Using OVSX?
         run: echo $USE_OVSX
-      - name: Check boolean for USE_VSCE
-        if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
-        run: echo USE_VSCE is ${{ env.USE_VSCE == 'true' }} | ${{ env.USE_VSCE }}
-      - name: Check boolean for USE_OVSX
-        if: $(( env.USE_DIAGNOSE_MODE == 'true' }}
-        run: echo USE_OVSX is ${{ env.USE_OVSX == 'true' }} | ${{ env.USE_OVSX }}
-      - name: Check boolean for PUBLISH_EXTENSION
-        if: $(( env.USE_DIAGNOSE_MODE == 'true' }}
-        run: echo PUBLISH_EXTENSION is ${{ env.PUBLISH_EXTENSION == 'true' }} | ${{ env.PUBLISH_EXTENSION }}
+      # - name: Check boolean for USE_VSCE
+      #   if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
+      #   run: echo USE_VSCE is ${{ env.USE_VSCE == 'true' }} | ${{ env.USE_VSCE }}
+      # - name: Check boolean for USE_OVSX
+      #   if: $(( env.USE_DIAGNOSE_MODE == 'true' }}
+      #   run: echo USE_OVSX is ${{ env.USE_OVSX == 'true' }} | ${{ env.USE_OVSX }}
+      # - name: Check boolean for PUBLISH_EXTENSION
+      #   if: $(( env.USE_DIAGNOSE_MODE == 'true' }}
+      #   run: echo PUBLISH_EXTENSION is ${{ env.PUBLISH_EXTENSION == 'true' }} | ${{ env.PUBLISH_EXTENSION }}
 
-  deploy:
-    runs-on: ubuntu-latest
-    if: ${{ env.PUBLISH_EXTENSION }}
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-      - name: Install Node.js + npm
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-      - name: Install npm
-        run: npm install
-      # - uses: lannonbr/vsce-action@3.0.0
-      - name: Install VSCE
-        run: npm install -g vsce
-      - name: Install OVSX
-        run: npm install -g ovsx
-      - name: Publish Extension - VSCE (to VS Marketplace)
-        if: ${{ env.USE_VSCE == 'true' }}
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
-        run: vsce publish -p $VSCE_PAT
-      - name: Publish Extension - OVSX (to Open-VSX.org)
-        if: ${{ env.USE_OVCX == 'true' }}
-        env:
-          OVSX_PAT: ${{ secrets.OVSX_PAT }}
-        run: ovsx publish -p $OVSX_PAT
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   if: ${{ env.PUBLISH_EXTENSION }}
+  #   steps:
+  #     - name: Checkout Repo
+  #       uses: actions/checkout@v2
+  #     - name: Install Node.js + npm
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16.x
+  #     - name: Install npm
+  #       run: npm install
+  #     # - uses: lannonbr/vsce-action@3.0.0
+  #     - name: Install VSCE
+  #       run: npm install -g vsce
+  #     - name: Install OVSX
+  #       run: npm install -g ovsx
+  #     - name: Publish Extension - VSCE (to VS Marketplace)
+  #       if: ${{ env.USE_VSCE == 'true' }}
+  #       env:
+  #         VSCE_PAT: ${{ secrets.VSCE_PAT }}
+  #       run: vsce publish -p $VSCE_PAT
+  #     - name: Publish Extension - OVSX (to Open-VSX.org)
+  #       if: ${{ env.USE_OVCX == 'true' }}
+  #       env:
+  #         OVSX_PAT: ${{ secrets.OVSX_PAT }}
+  #       run: ovsx publish -p $OVSX_PAT

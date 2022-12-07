@@ -70,67 +70,20 @@ env:
 #       - master
 name: Publish VSCode Extension
 jobs:
-  checkA:
+  check:
     runs-on: ubuntu-latest
+    if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
     steps:
-      - name: Using VSCE?
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Diagnose
+        if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
         run: |
-          echo "$USE_VSCE | value: __${{ env.USE_VSCE }}__" >> $GITHUB_STEP_SUMMARY
-          echo "${USE_VSCE} | value: __${{ env.USE_VSCE }}__" >> $GITHUB_STEP_SUMMARY
-      - name: Using OVSX?
-        run: |
-          echo "$USE_OVSX | value: __${{ env.USE_OVSX }}__"
-          echo "${USE_OVSX} | value: __${{ env.USE_OVSX }}__"
-  checkB:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Using VSCE? [[ Test-B | valueIs('true') ]]
-        run: |
-          echo "${USE_VSCE} | ${{ env.USE_VSCE == 'true' }}" >> $GITHUB_STEP_SUMMARY
-  checkC:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Using VSCE? [[ Test-C | valueIs(true) ]]
-        run: |
-          echo "${USE_VSCE} | ${{ env.USE_VSCE == true }}" >> $GITHUB_STEP_SUMMARY
-  checkD:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Using VSCE? [[ Test-D | valueIs(1) ]]
-        run: |
-          echo "${USE_VSCE} | ${{ env.USE_VSCE == 1 }}" >> $GITHUB_STEP_SUMMARY
-  checkE:
-    runs-on: ubuntu-latest
-    steps:
-      - id: step1
-        name: Using VSCE? [[ Test-E | valueIs('1') ]]
-        run: |
-          echo "## ${{ steps.step1.name }} 🚀" >> $GITHUB_STEP_SUMMARY
-          echo "Try with: `${USE_VSCE}`" >> GITHUB_STEP_SUMMARY
-          echo -e "\n```sh\n${USE_VSCE} | ${{ env.USE_VSCE == '1' }}\n```" >> $GITHUB_STEP_SUMMARY
-  checkF:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Use Python Shell
-        run: |
-          import os
-          from textwrap import dedent
-
-          source = "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-running-a-python-script"
-
-          mbody = f"""\n
-          ## MarkDown Header :sparkle:
-
-          See [here]({source}) and learn how to use a `python` shell in GitHub actions! :tada:
-
-          """
-          payload = dedent(mbody)
-          print(payload)
-          os.environ["GITHUB_STEP_SUMMARY"] += payload
-        shell: python
-        env:
-          GITHUB_STEP_SUMMARY: ${{ env.GITHUB_STEP_SUMMARY }}
-
+          echo "## Diagnose Input Parameters :zap:" >> $GITHUB_STEP_SUMMARY
+          echo "- name: USE_VSCE \n  value: ${{ env.USE_VSCE }}" >> $GITHUB_STEP_SUMMARY
+          echo "- name: USE_OVSX \n  value: ${{ env.USE_OVSX }}" >> $GITHUB_STEP_SUMMARY
+          echo "- name: PUBLISH_EXTENSION \n  value: ${{ env.PUBLISH_EXTENSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "- name: USE_DIAGNOSE_MODE \n  value: ${{ env.USE_DIAGNOSE_MODE }}" >> $GITHUB_STEP_SUMMARY
       # - name: Check boolean for USE_VSCE
       #   if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
       #   run: echo USE_VSCE is ${{ env.USE_VSCE == 'true' }} | ${{ env.USE_VSCE }}
@@ -141,30 +94,38 @@ jobs:
       #   if: $(( env.USE_DIAGNOSE_MODE == 'true' }}
       #   run: echo PUBLISH_EXTENSION is ${{ env.PUBLISH_EXTENSION == 'true' }} | ${{ env.PUBLISH_EXTENSION }}
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   if: ${{ env.PUBLISH_EXTENSION }}
-  #   steps:
-  #     - name: Checkout Repo
-  #       uses: actions/checkout@v2
-  #     - name: Install Node.js + npm
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16.x
-  #     - name: Install npm
-  #       run: npm install
-  #     # - uses: lannonbr/vsce-action@3.0.0
-  #     - name: Install VSCE
-  #       run: npm install -g vsce
-  #     - name: Install OVSX
-  #       run: npm install -g ovsx
-  #     - name: Publish Extension - VSCE (to VS Marketplace)
-  #       if: ${{ env.USE_VSCE == 'true' }}
-  #       env:
-  #         VSCE_PAT: ${{ secrets.VSCE_PAT }}
-  #       run: vsce publish -p $VSCE_PAT
-  #     - name: Publish Extension - OVSX (to Open-VSX.org)
-  #       if: ${{ env.USE_OVCX == 'true' }}
-  #       env:
-  #         OVSX_PAT: ${{ secrets.OVSX_PAT }}
-  #       run: ovsx publish -p $OVSX_PAT
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ env.PUBLISH_EXTENSION == 'true' }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Diagnose
+        if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
+        run: |
+          echo "## Diagnose Input Parameters :zap:" >> $GITHUB_STEP_SUMMARY
+          echo "- name: USE_VSCE \n  value: ${{ env.USE_VSCE }}" >> $GITHUB_STEP_SUMMARY
+          echo "- name: USE_OVSX \n  value: ${{ env.USE_OVSX }}" >> $GITHUB_STEP_SUMMARY
+          echo "- name: PUBLISH_EXTENSION \n  value: ${{ env.PUBLISH_EXTENSION }}" >> $GITHUB_STEP_SUMMARY
+          echo "- name: USE_DIAGNOSE_MODE \n  value: ${{ env.USE_DIAGNOSE_MODE }}" >> $GITHUB_STEP_SUMMARY
+      - name: Install Node.js + npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: Install npm
+        run: npm install
+      # - uses: lannonbr/vsce-action@3.0.0
+      - name: Install VSCE
+        run: npm install -g vsce
+      - name: Install OVSX
+        run: npm install -g ovsx
+      - name: Publish Extension - VSCE (to VS Marketplace)
+        if: ${{ env.USE_VSCE == 'true' }}
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: vsce publish -p $VSCE_PAT
+      - name: Publish Extension - OVSX (to Open-VSX.org)
+        if: ${{ env.USE_OVCX == 'true' }}
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: ovsx publish -p $OVSX_PAT

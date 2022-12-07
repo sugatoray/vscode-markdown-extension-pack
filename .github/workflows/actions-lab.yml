@@ -1,0 +1,100 @@
+
+on:
+  workflow_dispatch:
+    inputs:
+      diagnose:
+        description: Diagnose Mode?
+        type: boolean
+        required: true
+        default: false
+
+      publish:
+        description: Publish Extension?
+        type: boolean
+        required: true
+        default: true
+      use_vsce:
+        description: Publish with VSCE?
+        type: boolean
+        required: true
+        default: true
+      use_ovsx:
+        description: Publish with OVSX?
+        type: boolean
+        required: true
+        default: true
+
+
+env:
+  USE_VSCE: ${{ github.event.inputs.use_vsce }}
+  USE_OVSX: ${{ github.event.inputs.use_ovsx }}
+  PUBLISH_EXTENSION: ${{ github.event.inputs.publish }}
+  USE_DIAGNOSE_MODE: ${{ github.event.inputs.diagnose }}
+
+
+name: Publish VSCode Extension
+jobs:
+  checkA:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using VSCE?
+        run: |
+          echo "$USE_VSCE | value: __${{ env.USE_VSCE }}__" >> $GITHUB_STEP_SUMMARY
+          echo "${USE_VSCE} | value: __${{ env.USE_VSCE }}__" >> $GITHUB_STEP_SUMMARY
+      - name: Using OVSX?
+        run: |
+          echo "$USE_OVSX | value: __${{ env.USE_OVSX }}__"
+          echo "${USE_OVSX} | value: __${{ env.USE_OVSX }}__"
+  checkB:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using VSCE? [[ Test-B | valueIs('true') ]]
+        run: |
+          echo "${USE_VSCE} | ${{ env.USE_VSCE == 'true' }}" >> $GITHUB_STEP_SUMMARY
+  checkC:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using VSCE? [[ Test-C | valueIs(true) ]]
+        run: |
+          echo "${USE_VSCE} | ${{ env.USE_VSCE == true }}" >> $GITHUB_STEP_SUMMARY
+  checkD:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Using VSCE? [[ Test-D | valueIs(1) ]]
+        run: |
+          echo "${USE_VSCE} | ${{ env.USE_VSCE == 1 }}" >> $GITHUB_STEP_SUMMARY
+  checkE:
+    runs-on: ubuntu-latest
+    steps:
+      - id: step1
+        name: Using VSCE? [[ Test-E | valueIs('1') ]]
+        run: |
+          echo "## ${{ steps.step1.name }} 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "Try with: `${USE_VSCE}`" >> GITHUB_STEP_SUMMARY
+          echo -e "\n```sh\n${USE_VSCE} | ${{ env.USE_VSCE == '1' }}\n```" >> $GITHUB_STEP_SUMMARY
+  checkF:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Use Python Shell
+        run: |
+          import os
+          from textwrap import dedent
+
+          source = "https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#example-running-a-python-script"
+
+          mbody = f"""\n
+          ## MarkDown Header :sparkle:
+
+          See [here]({source}) and learn how to use a `python` shell in GitHub actions! :tada:
+
+          """
+          payload = dedent(mbody)
+          print(payload)
+          os.environ["GITHUB_STEP_SUMMARY"] += payload
+        shell: python
+        env:
+          GITHUB_STEP_SUMMARY: ${{ env.GITHUB_STEP_SUMMARY }}

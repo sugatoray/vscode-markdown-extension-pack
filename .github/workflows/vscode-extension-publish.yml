@@ -102,9 +102,10 @@ jobs:
   checkE:
     runs-on: ubuntu-latest
     steps:
-      - name: Using VSCE? [[ Test-E | valueIs('1') ]]
+      - id: step1
+        name: Using VSCE? [[ Test-E | valueIs('1') ]]
         run: |
-          echo "## ${{ jobs.checkE.steps[*].name }} 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "## ${{ steps.step1.name }} 🚀" >> $GITHUB_STEP_SUMMARY
           echo "Try with: `${USE_VSCE}`" >> GITHUB_STEP_SUMMARY
           echo -e "\n```sh\n${USE_VSCE} | ${{ env.USE_VSCE == '1' }}\n```" >> $GITHUB_STEP_SUMMARY
   checkF:

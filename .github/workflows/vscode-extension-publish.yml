@@ -77,7 +77,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Diagnose
-        if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
+        if: ${{ github.env.USE_DIAGNOSE_MODE == 'true' }}
         run: |
           echo "## Diagnose Input Parameters :zap:" >> $GITHUB_STEP_SUMMARY
           echo "- name: USE_VSCE \n  value: ${{ env.USE_VSCE }}" >> $GITHUB_STEP_SUMMARY
@@ -96,12 +96,12 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ env.PUBLISH_EXTENSION == 'true' }}
+    if: ${{ github.env.PUBLISH_EXTENSION == 'true' }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Diagnose
-        if: ${{ env.USE_DIAGNOSE_MODE == 'true' }}
+        if: ${{ github.env.USE_DIAGNOSE_MODE == 'true' }}
         run: |
           echo "## Diagnose Input Parameters :zap:" >> $GITHUB_STEP_SUMMARY
           echo "- name: USE_VSCE \n  value: ${{ env.USE_VSCE }}" >> $GITHUB_STEP_SUMMARY
@@ -120,12 +120,12 @@ jobs:
       - name: Install OVSX
         run: npm install -g ovsx
       - name: Publish Extension - VSCE (to VS Marketplace)
-        if: ${{ env.USE_VSCE == 'true' }}
+        if: ${{ github.env.USE_VSCE == 'true' }}
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: vsce publish -p $VSCE_PAT
       - name: Publish Extension - OVSX (to Open-VSX.org)
-        if: ${{ env.USE_OVCX == 'true' }}
+        if: ${{ github.env.USE_OVCX == 'true' }}
         env:
           OVSX_PAT: ${{ secrets.OVSX_PAT }}
         run: ovsx publish -p $OVSX_PAT

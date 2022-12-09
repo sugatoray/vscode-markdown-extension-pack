@@ -3,7 +3,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.markdownlint": true,
     },
-    "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
+    //"workbench.colorTheme": "Community Material Theme Palenight High Contrast",
     //"workbench.colorTheme": "Monokai",
     "workbench.settings.editor": "json",
     "workbench.settings.openDefaultSettings": true,
@@ -46,8 +46,13 @@
           ? - [ ] "GitHub Dark Dimmed",
           ? - [ ] "GitHub Dark Default",
           ! - [4] "Solarized Dark",
+          ! - [5] "Panda Syntax"
+          ! - [6] "Night Owl"
+          ! - [7] "DuoTone Dark Sea"
+          ! - [8] "Community Material Theme Palenight High Contrast"
+          * - [9] "Default Dark+"
     */
-    //"workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
     // *Integrated terminal Font Family*:
     /*
         @@ field: "terminal.integrated.fontFamily"
@@ -99,4 +104,30 @@
        - Why? Dangerously loud laptop fan
     */
     "typescript.disableAutomaticTypeAcquisition": true,
+    // Custom commands
+    /*
+       extensions:
+       - multi-command: ryuta46.multi-command
+       - Command Runner: edonet.vscode-command-runner
+
+       source:
+       - https: //marketplace.visualstudio.com/items?itemName=ryuta46.multi-command
+       - https: //marketplace.visualstudio.com/items?itemName=edonet.vscode-command-runner
+    */
+    "command-runner.terminal.name": "runCommand",
+    "command-runner.terminal.autoClear": true,
+    "command-runner.terminal.autoFocus": true,
+    "command-runner.commands": {
+        "echo workspaceFolder": "echo ${workspaceFolder}",
+        "echo file": "echo ${file}",
+        "genpdocs file": "pdoc -d google -h localhost -n -p ${input:5566} --math --show-source ${file}",
+        "setconda": ". ${workspaceFolder}/.vscode/setconda.sh",
+    },
+    // Using Bookmarks
+    /*
+        Extension: Bookmarks
+    */
+    "bookmarks.saveBookmarksInProject": true,
+    // Using Tasks (tasks.json)
+    "task.allowAutomaticTasks": "on",
 }

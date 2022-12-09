@@ -4,6 +4,7 @@
     "recommendations": [
         "sugatoray.vscode-markdown-extension-pack",
         "sugatoray.jinja-extension-pack",
+        "sugatoray.vscode-git-extension-pack",
         "ms-vscode.remote-repositories",
         "ms-vscode-remote.vscode-remote-extensionpack"
     ]

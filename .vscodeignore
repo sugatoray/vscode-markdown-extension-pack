@@ -1,6 +1,7 @@
 .vscode/
 .github/
 .artifacts/
+.secrets/
 Makefile
 .gitignore
 *.vsix

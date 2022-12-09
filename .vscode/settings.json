@@ -3,6 +3,8 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.markdownlint": true,
     },
+    "python.terminal.activateEnvironment": true,
+    "window.zoomLevel": 0,
     //"workbench.colorTheme": "Community Material Theme Palenight High Contrast",
     //"workbench.colorTheme": "Monokai",
     "workbench.settings.editor": "json",
@@ -31,6 +33,16 @@
     "markdown-pdf.outputDirectory": "exports",
     // Instant Markdown Settings
     "instantmarkdown.autoOpenBrowser": false,
+    // Spell Checker: Known Words
+    "cSpell.words": [
+        "VS Code",
+        "VSCode",
+        "vscode",
+    ],
+    "workbench.editorAssociations": {
+        "*.md": "default",
+    },
+
     // Markdown Extended Settings
     "markdown.styles": [
         //"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"

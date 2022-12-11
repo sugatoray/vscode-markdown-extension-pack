@@ -134,6 +134,8 @@
         "echo file": "echo ${file}",
         "genpdocs file": "pdoc -d google -h localhost -n -p ${input:5566} --math --show-source ${file}",
         "setconda": ". ${workspaceFolder}/.vscode/setconda.sh",
+        // json-server: https://github.com/typicode/json-server
+        "restapi.start": "json-server --watch ${file} --port ${input:3000}",
     },
     // Using Bookmarks
     /*

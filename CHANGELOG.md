@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+- Added [`Markdown Image Size`](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-image-size) extension for image size support in VS Code markdown files.
+
 ## 1.1.1
 
 - Update the `README.md` with additional installation and downloads information.

@@ -27,9 +27,10 @@ This extension pack packages some of the most popular (and some of my favorite) 
 | `07` | 🎁 [Markdown Checkboxes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-checkbox) <br/> <p><ul> Adds `- [x] tasklist` checkbox support to the built-in markdown preview. </ul></p> |
 | `08` | 🎁 [Markdown Footnotes](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-footnotes) <br/> <p><ul> Adds [^footnote] syntax support to VS Code's built-in markdown preview. </ul></p> |
 | `09` | 🎁 [Markdown yaml Preamble](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-yaml-preamble) <br/> <p><ul> Renders yaml front matter as a table in the built-in markdown preview. Make sure to set `"markdown.previewFrontMatter": "show"` in VS Code `settings.json`.</ul></p> |
-| `10` | 🎁 [Markdown Theme Kit](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Theme-MarkdownKit) <br/> <p><ul> A set of themes based on [SublimeText-Markdown/MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing). </ul></p> |
-| `11` | 🎁 [Markdown Navigation](https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-navigation) <br/> <p><ul> Auto generate markdown navigation panel to the activity bar. </ul></p> |
-| `12` | 🎁 [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) <br/> <p><ul> Display pdf file in VSCode. </ul></p> |
+| `10` | 🎁 [Markdown Image Size](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-image-size) <br/> <p><ul> Adds `![](./cat.gif =100x200)` image support to VS Code's built-in markdown preview.</ul></p> |
+| `11` | 🎁 [Markdown Theme Kit](https://marketplace.visualstudio.com/items?itemName=ms-vscode.Theme-MarkdownKit) <br/> <p><ul> A set of themes based on [SublimeText-Markdown/MarkdownEditing](https://github.com/SublimeText-Markdown/MarkdownEditing). </ul></p> |
+| `12` | 🎁 [Markdown Navigation](https://marketplace.visualstudio.com/items?itemName=AlanWalk.markdown-navigation) <br/> <p><ul> Auto generate markdown navigation panel to the activity bar. </ul></p> |
+| `13` | 🎁 [vscode-pdf](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) <br/> <p><ul> Display pdf file in VSCode. </ul></p> |
 
 ## Want to see your extension added?
 

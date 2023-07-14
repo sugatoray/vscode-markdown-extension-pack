@@ -5,6 +5,8 @@
         "sugatoray.vscode-markdown-extension-pack",
         "sugatoray.jinja-extension-pack",
         "sugatoray.vscode-git-extension-pack",
+        "sugatoray.vscode-remotework-extension-pack",
+        "sugatoray.vscode-textutils-extension-pack",
         "ms-vscode.remote-repositories",
         "ms-vscode-remote.vscode-remote-extensionpack"
     ]
